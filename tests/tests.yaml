@@ -1,0 +1,11 @@
+bootstrap: false
+reset: false
+tests: "none"
+virtualenv: False
+packages:
+  - build-essential
+  - charm-tools
+  - python-dev
+  - python-pip
+  - python-virtualenv
+  - rsync

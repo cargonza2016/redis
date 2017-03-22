@@ -1,0 +1,49 @@
+options:
+  port:
+    type: int
+    default: 6379
+    description: |
+      Accept connections on the specified port.
+  password:
+    type: string
+    default: ""
+    description: |
+      Require clients to issue AUTH <PASSWORD> before processing any other
+      commands.
+  loglevel:
+    type: string
+    default: notice
+    description: |
+      Specify the Redis server verbosity level. Choices are:
+      - debug (a lot of information, useful for development/testing);
+      - verbose (many rarely useful info, but not a mess like the debug level);
+      - notice (moderately verbose, what you want in production probably);
+      - warning (only very important / critical messages are logged).
+  logfile:
+    type: string
+    default: /var/log/redis/redis-server.log
+    description: |
+      Specify the log file name.
+  timeout:
+    type: int
+    default: 0
+    description: |
+      Close the connection after a client is idle for N seconds (0 to disable).
+  tcp-keepalive:
+    type: int
+    default: 0
+    description: |
+      If non-zero, use SO_KEEPALIVE to send TCP ACKs to clients in absence of
+      communication. This is useful to detect dead peers and to take the
+      connection alive from the point of view of network quipment in the
+      middle. The specified value is in seconds.
+  databases:
+    type: int
+    default: 16
+    description: |
+      Set the number of databases. The default database is DB 0. You can select
+      a different one on a per-connection basis using SELECT <dbid> where dbid
+      is a number between 0 and 'databases'-1.
+
+
+

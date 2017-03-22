@@ -1,0 +1,27 @@
+#!/usr/bin/python
+
+# Copyright 2015 Canonical Ltd.
+# Licensed under the GPLv3, see copyright file for details.
+
+import setup
+setup.pre_install()
+
+from charmhelpers import fetch
+
+import configfile
+import hookutils
+import settings
+
+
+@hookutils.hook_name_logged
+def install():
+    """Install the Debian packages required by redis."""
+    hookutils.log('Installing system packages.')
+    fetch.apt_install(fetch.filter_installed_packages(settings.PACKAGES))
+    # Include the customized configuration file at the end of the default
+    # redis configuration file.
+    configfile.include_config(settings.REDIS_CONF)
+
+
+if __name__ == "__main__":
+    install()

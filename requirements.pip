@@ -1,0 +1,6 @@
+# Copyright 2015 Canonical Ltd.
+# Licensed under the GPLv3, see copyright file for details.
+
+# Redis charm Python requirements (see the deps directory).
+
+charmhelpers==0.3.1
