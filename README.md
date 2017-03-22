@@ -14,10 +14,10 @@ master-slave relationship. Go to the Redis web pages for more information on
 
 # Usage
 
-To deploy this charm first bootstrap your Juju environment and issue the
+To deploy this charm first bootstrap your Juju 2.0 environment and issue the
 following command:
 
-    juju deploy redis
+    juju deploy cs:redis
 
 Expose the master if you need to contact them for some reason.
 
@@ -32,8 +32,8 @@ slaves.
 To set up a master-slave scenario, deploy two services using this charm, one
 for the master and one the slave server, then relate the two.
 
-    juju deploy redis redis1
-    juju deploy redis redis2
+    juju deploy cs:redis redis1
+    juju deploy cs:redis redis2
     juju add-relation redis1:master redis2:slave
 
 # Connecting to the charm
